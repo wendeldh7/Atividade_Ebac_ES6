@@ -1,20 +1,23 @@
 // Exercício Nota Escolar
 // Obter a média a partir de uma array
 
-const listaPresenca = ['Ana', 'José', 'João', 'Bianca']
-const notas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const alunos = [
+    { nome: "João", nota: 5.5 },
+    { nome: "Maria", nota: 7.0 },
+    { nome: "Pedro", nota: 8.5 },
+    { nome: "Ana", nota: 4.0 },
+    { nome: "Lucas", nota: 6.5 }
+];
 
-console.log(listaPresenca[0]);
+function filtrarAlunos(alunos) {
+    const alunosAprovados = [];
+    for (let i = 0; i < alunos.length; i++) {
+    if (alunos[i].nota >= 6) {
+        alunosAprovados.push(alunos[i]);
+    }
+}
+    return alunosAprovados;
+}
 
-const lista1 = ['Ana', 'José', 'João', 'Bianca']
-const lista2 = ['Predo', 'Joaquim', 'Maria', 'Olivia']
-
-const listas = lista1.concat(lista2)
-
-console.log(listas);
-
-const notas1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-const notasBoas = notas1.filter(n => n >= 6)
-
-console.log(notasBoas);
+const alunosAprovados = filtrarAlunos(alunos);
+console.log(alunosAprovados);
