@@ -3,30 +3,33 @@
 // Exercício Nota Escolar
 // Obter a média a partir de uma array
 
+// Array de objetos com nome e nota dos alunos
 var alunos = [{
-  nome: "João",
-  nota: 5.5
+  nome: 'João',
+  nota: 8
 }, {
-  nome: "Maria",
-  nota: 7.0
-}, {
-  nome: "Pedro",
-  nota: 8.5
-}, {
-  nome: "Ana",
-  nota: 4.0
-}, {
-  nome: "Lucas",
+  nome: 'Maria',
   nota: 6.5
+}, {
+  nome: 'Pedro',
+  nota: 7.5
+}, {
+  nome: 'Mariana',
+  nota: 5
+}, {
+  nome: 'Lucas',
+  nota: 9
 }];
-function filtrarAlunos(alunos) {
-  var alunosAprovados = [];
-  for (var i = 0; i < alunos.length; i++) {
-    if (alunos[i].nota >= 6) {
-      alunosAprovados.push(alunos[i]);
-    }
-  }
-  return alunosAprovados;
-}
+
+// Função que filtra os alunos com nota maior ou igual a 6
+var filtrarAlunos = function filtrarAlunos(alunos) {
+  return alunos.filter(function (aluno) {
+    return aluno.nota >= 6;
+  });
+};
+
+// Chamando a função para filtrar os alunos
 var alunosAprovados = filtrarAlunos(alunos);
+
+// Exibindo os alunos aprovados
 console.log(alunosAprovados);
